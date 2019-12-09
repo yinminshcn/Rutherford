@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            YPlayer
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item *ngFor="let media of (medias$ | async)" (click)="playMediaByInfo(media)" button>
+        <ion-icon slot="start" color="medium" name="mail-unread"></ion-icon>
+        <ion-label>{{media?.title}}</ion-label>
+    </ion-item>
+
+    <ion-item-divider></ion-item-divider>
+
+    <ion-item *ngFor="let media of (history$ | async)" (click)="playMediaByInfo(media)" button>
+        <ion-icon slot="start" color="medium" name="mail-open"></ion-icon>
+        <ion-label>{{media?.title}} : {{media?.seekTo}}</ion-label>
+    </ion-item>
+</ion-content>

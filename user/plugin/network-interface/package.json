@@ -1,0 +1,103 @@
+{
+  "_args": [
+    [
+      "@ionic-native/network-interface",
+      "/opt/project/rutherford"
+    ]
+  ],
+  "_from": "@ionic-native/network-interface@latest",
+  "_hasShrinkwrap": false,
+  "_id": "@ionic-native/network-interface@5.6.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/@ionic-native/network-interface",
+  "_nodeVersion": "10.15.3",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/network-interface_5.6.0_1557983475015_0.9693498709145616"
+  },
+  "_npmUser": {
+    "email": "mytechde@outlook.com",
+    "name": "danielsogl"
+  },
+  "_npmVersion": "6.9.0",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "@ionic-native/network-interface",
+    "raw": "@ionic-native/network-interface",
+    "rawSpec": "",
+    "scope": "@ionic-native",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/@ionic-native/network-interface/-/network-interface-5.6.0.tgz",
+  "_shasum": "eabdb3df770a456e502b8800a97ff7fbb05ae5c3",
+  "_shrinkwrap": null,
+  "_spec": "@ionic-native/network-interface",
+  "_where": "/opt/project/rutherford",
+  "author": {
+    "name": "ionic"
+  },
+  "bugs": {
+    "url": "https://github.com/ionic-team/ionic-native/issues"
+  },
+  "dependencies": {
+    "@types/cordova": "latest"
+  },
+  "description": "Ionic Native - Native plugins for ionic apps",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "fileCount": 7,
+    "integrity": "sha512-uSwW+4Ne6urY7946tC0QEX8lRBemg1iTAQfeqm4UpSFhAaYbT6aaYVLOT67H4Bq8Wc0aQfFqzWj/SgvWrDQQ6A==",
+    "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc3PDzCRA9TVsSAnZWagAAwq4QAKF4PYHSVqs/0y2dHFW0\nO0WViCyPXDL3BOE387YZVlga2C4iNnEMl7ESRiCQpOKf+kcfI511XVxhXDHD\nZZrI4Zz32GQEEesX/7n+UfkPL7OZSa2+svWjbyzhWMY2tfwS63xqKB2DA7I4\ntHZJra5d+yacNeAjf2/vpTOiXQeTe0i1QqZIcLtT9pHCjD94rQ52zNLX8fAE\n6bFSMgdvXhSF+1Sw0X1mFffcHwMARxRs2TB0mBm1LdVIbwtTw81YG43Cv2Rp\nME/CjOA+3UsF8ICuujLFCrBerWS0rZKPr24xzJweeCUfyTveSLmSOPFDkWBE\nRfAC6zfP1aRCGauISBO7EfRrNrFy5jslvuqnU5XBdf7wU9Bn0uPK1lU8yFzo\nfwtO9zreqd1K0n+e+w30q+y3E5zkvJcQ2lPILb5oA37eg1+oWjM4pMECxFTJ\nwP05pCAFIDs4uAduEtbYxSYDjKDJ6jY/PTWlHNHUbYdyXsTxBjLOUzPclJIc\nCn2Z7LT38EPIW/GImHwDFSB0XV58HHw7SDeXPNuerdMFvlvvxiJ/pKTXmntU\nj+8CoH/DPg5K5ehbqsregThcv5uLjFBbepbOosbqYpGUnn9pY3+VfEosT5UR\nqvKtm25Ub3G9ywW+dWQbtElHMe/4g844wgMlQ76xL+i7Vx8OF7bxrzOWBb3Y\nI4O/\r\n=QkSX\r\n-----END PGP SIGNATURE-----\r\n",
+    "shasum": "eabdb3df770a456e502b8800a97ff7fbb05ae5c3",
+    "tarball": "https://registry.npmjs.org/@ionic-native/network-interface/-/network-interface-5.6.0.tgz",
+    "unpackedSize": 17002
+  },
+  "homepage": "https://github.com/ionic-team/ionic-native#readme",
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "danielsogl",
+      "email": "mytechde@outlook.com"
+    },
+    {
+      "name": "ihadeed",
+      "email": "ibby@zyra.ca"
+    },
+    {
+      "name": "ionicjs",
+      "email": "hi@ionicframework.com"
+    },
+    {
+      "name": "maxlynch",
+      "email": "max@ionic.io"
+    },
+    {
+      "name": "mhartington",
+      "email": "mikehartington@gmail.com"
+    },
+    {
+      "name": "wf9a5m75",
+      "email": "wf9a5m75@gmail.com"
+    }
+  ],
+  "module": "index.js",
+  "name": "@ionic-native/network-interface",
+  "optionalDependencies": {},
+  "peerDependencies": {
+    "@ionic-native/core": "^5.1.0",
+    "rxjs": "^6.3.0"
+  },
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ionic-team/ionic-native.git"
+  },
+  "typings": "index.d.ts",
+  "version": "5.6.0"
+}

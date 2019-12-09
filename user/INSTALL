@@ -1,0 +1,49 @@
+1. start ionic project:
+	ionic start rutherford sidemenu
+
+2. git clone project:
+	git clone -l /opt/project/rutherford rutherford
+	git pull /opt/project/rutherford
+
+3. add android platform:
+	ionic cordova platform add android
+
+4. modify android platform
+	find platforms -name "build.gradle" | xargs -i -t sed -i "s/maven.google.com/maven.aliyun.com\/repository\/public/g" {}
+	find platforms -name "build.gradle" | xargs -i -t sed -i "s/maven.aliyun.com\/repository\/public/maven.google.com/g" {}
+	find platforms -name "project.properties" | xargs -i -t cp -rf user/platform/project.properties {}
+
+5. typeorm
+	ionic cordova plugin add cordova-sqlite-storage
+	npm install @ionic-native/sqlite
+	npm install typeorm --save
+	npm install @types/node --save-dev
+	find platforms -name "SQLitePlugin.java" | xargs -i -t cp -rf ./user/platform/SQLitePlugin.java {}
+
+6. exoplayer
+	ionic cordova plugin add cordova-plugin-exoplayer
+	npm install @ionic-native/android-exoplayer
+	find platforms -name "LayoutProvider.java" | xargs -i -t dirname {}  | xargs -i -t cp -rf user/exoplayer/*.java {}
+	find platforms -name "exo_playback_control_view.xml" | xargs -i -t cp -rf user/layout/exo_playback_control_view.xml {}
+
+7. Mediaplayer
+	ionic cordova plugin add cordova-plugin-media
+	npm install @ionic-native/media
+	find platforms -name "AudioPlayer.java" | xargs -i -t cp -rf user/plugin/cordova-plugin-media/src/android/AudioPlayer.java {}
+
+8. File
+	ionic cordova plugin add cordova-plugin-file
+	npm install @ionic-native/file
+	find platforms -name "LocalFilesystem.java" | xargs -i -t dirname {}  | xargs -i -t cp -rf user/file/*.java {}
+
+9. Permission
+	ionic cordova plugin add cordova-plugin-android-permissions
+	npm install @ionic-native/android-permissions
+
+9. Png
+	find platforms -type d -name "drawable" | xargs -i -t cp -rf user/drawable/btn_star_big* {}
+
+10. build app
+	ionic cordova build android --release
+	jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore user/platform/my-release-key.jks platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk my-alias
+	zipalign -v 4 platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk rutherford.apk

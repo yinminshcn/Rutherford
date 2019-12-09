@@ -1,0 +1,60 @@
+1. start ionic project:
+	ionic start rutherford sidemenu
+
+2. git clone project:
+	git clone -l /opt/project/rutherford rutherford
+
+3. add android platform:
+	ionic cordova platform add android
+
+4. modify android platform
+	find platforms -name "build.gradle" | xargs -i -t sed -i "s/maven.google.com/maven.aliyun.com\/repository\/public/g" {}
+	find platforms -name "project.properties" | xargs -i -t cp -rf user/platform/project.properties {}
+
+	find platforms -name "CordovaPlugin.java" | xargs -i -t cp -rf user/platform/CordovaPlugin.java {}
+	find platforms -name "IonicWebViewEngine.java" | xargs -i -t cp -rf user/platform/IonicWebViewEngine.java {}
+
+	find platforms plugins node_modules -name "networkinterface.java" | xargs -i -t cp -rf ./user/plugin/cordova-plugin-networkinterface/src/android/networkinterface.java {}
+	find platforms plugins node_modules -name "networkinterface.js"   | xargs -i -t cp -rf ./user/plugin/cordova-plugin-networkinterface/js/networkinterface.js            {}
+	rm -rf node_modules/@ionic-native/network-interface
+	cp -rf user/plugin/network-interface node_modules/@ionic-native
+
+	find platforms plugins node_modules -name "networkinterface.js"   | xargs -i -t cp -rf ./user/plugin/build/networkinterface.js   {}
+
+	find platforms -name "SQLitePlugin.java" | xargs -i -t cp -rf ./user/platform/SQLitePlugin.java {}
+
+5. add network-interface
+	ionic cordova plugin add cordova-plugin-networkinterface
+	npm install @ionic-native/network-interface
+
+6. add localhostservice
+
+7. build app
+	ionic cordova build android --release
+	jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore user/platform/my-release-key.jks platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk my-alias
+	zipalign -v 4 platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk rutherford.apk
+
+8. deep inside android:
+	public WebResourceResponse shouldInterceptRequest(Uri uri, WebResourceRequest request)
+
+	for plugin: this.webView.engine is ionicWebViewEngine
+
+9. typeorm
+	ionic cordova plugin add cordova-sqlite-storage
+	npm install @ionic-native/sqlite
+	npm install typeorm --save
+	npm install @types/node --save-dev
+
+10. class-transformer
+	npm install class-transformer --save
+
+11. exoplayer
+	ionic cordova plugin add cordova-plugin-exoplayer
+	npm install @ionic-native/android-exoplayer
+
+12. Mediaplayer
+	find platforms -name "AudioPlayer.java" | xargs -i -t cp -rf user/plugin/cordova-plugin-media/src/android/AudioPlayer.java {}
+
+13. File
+	ionic cordova plugin add cordova-plugin-file
+	npm install @ionic-native/file

@@ -1,0 +1,7 @@
+{
+  "name": "rutherford",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

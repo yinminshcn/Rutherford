@@ -1,0 +1,73 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            Config
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item-group>
+        <ion-item-divider>
+            <ion-label>视频选项</ion-label>
+        </ion-item-divider>
+        <ion-item>
+            <ion-label>视频格式</ion-label>
+            <ion-select (ionChange)="saveYPlayerConfig()" [(ngModel)]="localSvr.yplayerConfig.movieType"
+                        interface="action-sheet">
+                <ion-select-option value="0">内嵌字幕</ion-select-option>
+                <ion-select-option value="1">外挂字幕</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>暂停条件</ion-label>
+            <ion-select (ionChange)="saveYPlayerConfig()" [(ngModel)]="localSvr.yplayerConfig.subtitleDecodeMethod"
+                        interface="action-sheet">
+                <ion-select-option value="0">句句停顿</ion-select-option>
+                <ion-select-option value="1">智能停顿</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>字幕遮板</ion-label>
+            <ion-range min="50" max="500" step="50" (ionChange)="saveYPlayerConfig()"
+                       [(ngModel)]="localSvr.yplayerConfig.cueHeight" snaps>
+            </ion-range>
+        </ion-item>
+    </ion-item-group>
+    <ion-item-group>
+        <ion-item-divider>
+            <ion-label>字典选项</ion-label>
+        </ion-item-divider>
+        <ion-item>
+            <ion-label>中英显示</ion-label>
+            <ion-select [(ngModel)]="localSvr.ybingConfig.hide_english_or_chinese" interface="action-sheet"
+                        (ionChange)="saveYPlayerConfig()">
+                <ion-select-option value="0">显示中文和英文</ion-select-option>
+                <ion-select-option value="1">显示英文</ion-select-option>
+                <ion-select-option value="2">显示中文</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>自动播放</ion-label>
+            <ion-select [(ngModel)]="localSvr.ybingConfig.auto_play" interface="action-sheet"
+                        (ionChange)="saveYPlayerConfig()">
+                <ion-select-option value="false">否</ion-select-option>
+                <ion-select-option value="true">是</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>双击等待时间</ion-label>
+            <ion-select [(ngModel)]="localSvr.ybingConfig.timeoutCnt" interface="action-sheet"
+                        (ionChange)="saveYPlayerConfig()">
+                <ion-select-option value="1">1秒</ion-select-option>
+                <ion-select-option value="2">2秒</ion-select-option>
+                <ion-select-option value="3">3秒</ion-select-option>
+                <ion-select-option value="4">4秒</ion-select-option>
+                <ion-select-option value="5">5秒</ion-select-option>
+            </ion-select>
+        </ion-item>
+    </ion-item-group>
+</ion-content>

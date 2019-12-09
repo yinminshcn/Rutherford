@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:id="@id/exo_play"
+        style="@style/Exo.Play"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:background="@color/background_color" />
+
+    <ImageButton
+        android:id="@+id/nextBtn"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|right"
+        android:src="@drawable/next"
+        android:background="#CC000000"
+        />
+
+    <ImageButton
+        android:id="@+id/prevBtn"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|left"
+        android:background="@color/background_color"
+        android:src="@drawable/previous" />
+
+    <Button
+        android:id="@+id/showBtn"
+        style="@android:style/DeviceDefault.ButtonBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_margin="0dp"
+        android:background="@android:color/darker_gray"
+        android:padding="0dp" />
+
+    <TextView
+        android:id="@id/exo_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:background="@color/background_color"
+        android:includeFontPadding="false"
+        android:textColor="@color/foreground_color"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="5dp"
+        android:background="@android:color/transparent">
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Switch
+            android:id="@+id/subtitleSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:alpha="0.8"
+            android:checked="false"
+            android:gravity="center"
+            android:switchMinWidth="32dp"
+            android:switchPadding="0dp"
+            android:text="字幕开关"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@android:color/darker_gray"
+            android:textOff="关"
+            android:textOn="开"
+            android:thumb="@drawable/switch_thumb"
+            android:track="@drawable/switch_track" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:alpha="0.8"
+            android:gravity="center"
+            android:text="字幕进度"
+            android:textAlignment="center"
+            android:textColor="@android:color/darker_gray"
+            android:typeface="serif" />
+
+        <ImageButton
+            android:id="@+id/offsetDecr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:src="@drawable/left_arrow" />
+
+        <TextView
+            android:id="@+id/subtitleOffset"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:alpha="0.8"
+            android:gravity="center"
+            android:text="0ms"
+            android:textAlignment="center"
+            android:textColor="@android:color/darker_gray" />
+
+        <ImageButton
+            android:id="@+id/offsetIncr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:src="@drawable/right_arrow" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/markBtn"
+            style="@android:style/TextAppearance.StatusBar.Icon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            android:src="@drawable/btn_star_big_off" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+
+</FrameLayout>
