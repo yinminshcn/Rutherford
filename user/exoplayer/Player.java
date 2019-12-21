@@ -498,13 +498,15 @@ public class Player implements UserPlayer {
     // 关闭播放器
     @Override
     public void close() {
-        exoPlayer.setTextOutput(null);
+        // exoPlayer.setTextOutput(null);
+        if( trackEvent != null ) exoPlayer.removeTextOutput(trackEvent);
         activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         audioManager.abandonAudioFocus(audioFocusChangeListener);
         if (exoPlayer != null) {
             exoPlayer.release();
             exoPlayer = null;
         }
+        trackEvent = null;
         if (this.dialog != null) {
             dialog.dismiss();
         }

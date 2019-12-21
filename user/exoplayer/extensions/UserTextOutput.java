@@ -100,6 +100,7 @@ public class UserTextOutput implements TextOutput {
                 }
                 obj.put("eText", eText);
             }
+            return obj;
         } catch ( JSONException e ) {
         }
         return null;

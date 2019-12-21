@@ -86,13 +86,13 @@ export class YplayerPage implements OnInit {
                             }
                         }
                         movies.sort((f0, f1) => {
-			    if( f0.url < f1.url ) {
-			        return -1;
-			    }
-			    if( f0.url == f1.url ) {
-			        return 0;
-			    }
-			    return 1;
+                            if (f0.url < f1.url) {
+                                return -1;
+                            }
+                            if (f0.url == f1.url) {
+                                return 0;
+                            }
+                            return 1;
                         });
                         observer.next(movies);
                     }
@@ -144,7 +144,7 @@ export class YplayerPage implements OnInit {
                                         await connect.manager.save(unit);
                                     }
                                 );
-                                // this.localSvr.print(status);
+                                this.localSvr.print(status);
                             }
                         }
                     },
